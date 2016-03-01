@@ -6,6 +6,7 @@ Ansible role to install and configure Oracle Weblogic Server.
 Requirements
 ------------
 
+Java
 Download oracle weblogic installers from http://www.oracle.com/technetwork/middleware/weblogic/downloads/index.html and place it on files folder
 
 Role Variables
