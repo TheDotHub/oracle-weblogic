@@ -6,7 +6,7 @@ Ansible role to install and configure Oracle Weblogic Server.
 Requirements
 ------------
 
-Download oracle weblogic installers from http://www.oracle.com/technetwork/middleware/weblogic/downloads/index.html
+Download oracle weblogic installers from http://www.oracle.com/technetwork/middleware/weblogic/downloads/index.html and place it on files folder
 
 Role Variables
 --------------
@@ -41,22 +41,8 @@ Role Variables
 
 - **oracle_weblogic_already_installed**: false
 
-Dependencies
+Credits
 ------------
 
-- jeqo.java
-
-Example Playbook
-----------------
-
-Go to tests/test.yml
-
-License
--------
-
-MIT
-
-Author Information
-------------------
-
-Jorge Quilcate (jorge.quilcate@sysco.no)
+- Jorge Quilcate (https://github.com/jeqo) for making the templates
+- Diego Otoya (https://github.com/TheDotHub) for fixing some vars
