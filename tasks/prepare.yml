@@ -1,0 +1,28 @@
+---
+# prepare operating system to the installation
+- name: create weblogic group
+  group:
+    name: "{{ oracle_weblogic_group }}"
+    state: present
+
+- name: create weblogic user
+  user:
+    name: "{{ oracle_weblogic_user }}"
+    group: "{{ oracle_weblogic_group }}"
+    createhome: yes
+    home: "{{ oracle_weblogic_user_home }}"
+    state: present
+
+- name: prepare oracle inventory parameters
+  template:
+    src: ora_inst.loc.j2
+    dest: "/etc/oraInst.loc"
+
+- set_fact:
+    wls_jar_path: /etc/wls1036_generic.jar
+
+- name: copy jar file
+  copy:   
+    src: /vagrant/roles/oracle-weblogic/files/wls1036_generic.jar
+    dest: "{{ wlst_jar_path }}"
+    owner: "{{ oracle_weblogic_user }}"
